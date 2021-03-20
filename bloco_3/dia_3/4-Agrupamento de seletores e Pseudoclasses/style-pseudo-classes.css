@@ -1,0 +1,22 @@
+div:hover {
+   border: 2px solid black;
+}
+div:nth-of-type(1) {
+    background-color: greenyellow;
+    font-style: italic;
+}
+div:nth-of-type(2) {
+    background-color: yellow;
+}
+div:nth-of-type(3) {
+    background-color: orange;
+    height: 100px;
+    font-style: italic;
+}
+div:nth-of-type(4) {
+    background-color: brown;
+}
+div:nth-of-type(5) {
+    background-color: rgb(197, 171, 171);
+    font-style: italic;
+}
