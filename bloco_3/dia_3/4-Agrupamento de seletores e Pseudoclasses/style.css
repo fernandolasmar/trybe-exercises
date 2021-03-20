@@ -1,6 +1,9 @@
 h1, p {
     text-align: center;
 } 
-ul:hover {
+a:hover {
     background-color: green;
+}
+a:active {
+    font-size: large;
 }
