@@ -7,3 +7,6 @@ a:hover {
 a:active {
     font-size: large;
 }
+ul, ol {
+    list-style: none;
+}
