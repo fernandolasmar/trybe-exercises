@@ -19,5 +19,14 @@ function repetido(numeros) {
         contNumero = 0;
     }
     return numeros[indexNumeroRepetido];
+
+
+
+    function techList(anyArray,name) {
+        let array = anyArray.sort();
+        let toLearn = [];
+        for(let indice in array) {
+        toLearn[indice] = { tech: array[indice], name: name };
+        }
+        return toLearn;
 }
-console.log(repetido([2,3,2,5,8,2,3]));
