@@ -41,3 +41,10 @@ function capital() {
 }
 capital();
  
+function allParagraphs() {
+      let paragraph = document.getElementsByTagName('p');
+      for (let i = 0; i < paragraph.length; i += 1) {
+            console.log(paragraph[i].innerHTML);
+      }
+}
+allParagraphs();
