@@ -35,5 +35,9 @@
  }
 correct();
 
-
+function capital() {
+      let text = document.getElementsByTagName('p')[0];
+      text.innerHTML = text.innerHTML.toUpperCase();  // deixa a frase em maiúscula.
+}
+capital();
  
