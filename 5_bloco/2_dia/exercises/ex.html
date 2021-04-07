@@ -95,7 +95,13 @@
           elementLi.innerHTML = list[number];
           elementUl.appendChild(elementLi);
       }
-      
+
+      for (let index = 1; index <= 3; index += 1) {
+        let elementH3 = document.createElement('h3');
+        elementH3.innerHTML = 'Teste tag h3-' + index;
+        elementDiv.appendChild(elementH3);      
+      }
+     
       
 
      
