@@ -102,8 +102,13 @@
         elementDiv.appendChild(elementH3);      
       }
      
-      
+      let title = document.getElementsByTagName('h1')[0];
+      title.className = 'title';
 
+     let elementH3 = document.getElementsByTagName('h3');
+     for (let index = 0; index < 3; index += 1) {
+      elementH3[index].className = 'description'; 
+     }
      
       
       
@@ -116,11 +121,11 @@
     ok-5-Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
     ok-6-Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
     ok-7-Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;
-    8-Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
-    9-Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
+    ok-8-Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+    ok-9-Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
 
     Agora que você criou muita coisa, vamos fazer algumas alterações e remoções:
-    1-Adicione a classe title na tag h1 criada;
+    ok-1-Adicione a classe title na tag h1 criada;
     2-Adicione a classe description nas 3 tags h3 criadas;
     3-Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
     4-Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div ;
