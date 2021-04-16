@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="cabecalho">
+    <h1>Formulário De Cadastro</h1>
+    <p>Preencha os campos abaixo.</p>
+  </header>
+  <form action="">   
+    <div>
+      <fieldset>
+        <div class="conteudo">
+          <label for="name">Nome Completo</label><br>
+          <input type="text" required name="Nome" maxlength="40" id="name" value="" size="40">
+        </div>
+
+        <div class="conteudo">
+          <label for="sexo">
+            <input type="radio" required name="sexo" id="sexo"> <span>Masculino</span>
+            <input type="radio" required name="sexo" id="sexo"> <span>Feminino</span>
+            <input type="radio" required name="sexo" id="sexo"> <span>Outro</span>
+          </label>
+        </div>
+  
+        <div class="conteudo">
+          <label for="email">Email</label><br>
+          <input type="email" required name="email" placeholder="exemplo@exemplo.com" maxlength="50" id="email" size="40">
+        </div>
+  
+        <div class="conteudo">
+          <label for="cpf">CPF</label><br>
+          <input type="number" required name="cpf" maxlength="11" placeholder="999.999.999-99" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="cpf">
+        </div>
+  
+        <div class="conteudo">
+          <label for="endereço">Endereço</label><br>
+          <input type="text" required name="endereço" maxlength="200" id="endereço" size="40">
+        </div>
+  
+        <div class="conteudo">
+          <label for="cidade">Cidade</label><br>
+          <input type="text" name="cidade" maxlength="28" id="cidade" size="40"> 
+        </div>
+  
+        <div class="conteudo">
+          <label for="estado">Estado</label><br>
+          <select name="estado" id="estado" required></select>
+        </div>
+  
+        <div class="conteudo">
+          <label for="complemento">
+            <input type="radio" required name="complemento" id="casa"> <span>Casa</span> 
+            <input type="radio" required name="complemento" id="apartamento"> <span>Apartamento</span>
+          </label>
+        </div>
+      </fieldset> 
+  
+      <fieldset>
+        <div class="conteudo">
+          <label for="curriculo">Resumo do currículo</label><br>
+          <textarea type="text" required name="" maxlength="1000" id="curriculo" cols="100" rows="20"></textarea>
+        </div>
+        
+        <div class="conteudo">
+          <label for="cargo">Cargo</label><br>
+          <input type="text" required name="cargo" maxlength="40" id="cargo" size="40">
+        </div>
+  
+        <div class="conteudo">
+          <label for="descricao">Descrição do cargo</label><br>
+          <input type="text" required name="descricao" maxlength="500" id="descricao" size="40">
+        </div>
+  
+        <div class="conteudo">
+          <label for="data-inicio">Data</label><br>
+          <input type="date" required name="data-inicio" min="1" max="31" id="data-inicio">
+        </div>
+  
+      </fieldset>
+
+      <button type="submit">Enviar</button>
+      <button type="reset">Limpar</button>
+    </div>    
+     
+  </form> 
+  <script src="script.js"></script>
+</body>
+</html>
