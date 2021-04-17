@@ -1,0 +1,13 @@
+.conteudo {
+  width: 80%;
+  margin: auto;
+}
+
+.titulo {
+  color: #fff;
+}
+
+.cabecalho {  
+  text-align: center;
+  background-color: rgb(62,195,109);  
+}
