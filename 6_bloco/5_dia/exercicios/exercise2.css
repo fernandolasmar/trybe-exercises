@@ -32,3 +32,21 @@ html {
       line-height: 1.5em;
     }
   }
+
+  @media screen and (min-width: 568px) {
+    body {
+      background-color: rgb(242, 250, 215);
+    }
+
+    .container {
+      flex-direction: column;
+    }
+
+    .titulo {
+      margin: 10px;
+    }
+  }
+
+  @media screen and (min-width: 1020) {
+    
+  }
