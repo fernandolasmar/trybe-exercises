@@ -72,6 +72,12 @@ const expectedResult = [
 
 function fantasyOrScienceFictionAuthors() {
   // escreva seu código aqui
+  return books.filter((autor) => (autor.genre === 'Ficção Científica' || autor.genre === 'Fantasia'
+  ))
+  .map((autor) => autor.author.name).sort();
 }
+console.log(fantasyOrScienceFictionAuthors(books));
 
 assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult);
+
+// Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
