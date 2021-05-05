@@ -76,6 +76,7 @@ function formatedBookNames() {
   // escreva seu código aqui
     return books.map((livro) => `${livro.name} - ${livro.genre} - ${livro.author.name}`);
 }
+console.log(formatedBookNames(books));
 
 assert.deepStrictEqual(formatedBookNames(), expectedResult);
 
