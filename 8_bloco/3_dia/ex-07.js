@@ -67,6 +67,20 @@ const expectedResult = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
   // escreva seu código aqui
+  return books.find((livro) => (livro.author.name.split(' ')
+  .filter((letra) => letra.endsWith('.')).length === 3
+  )).name;
 }
+console.log(authorWith3DotsOnName(books));
 
 assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
+
+// Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais. 
+// Dica: cada inicial termina com um ponto.
+
+// Se encontrar um elemento da matriz onde a função retorna um valor verdadeiro , 
+// find () retorna o valor desse elemento da matriz (e não verifica os valores restantes)
+
+// O método split () é usado para dividir uma string em uma matriz de substrings e retorna a nova matriz.
+
+//O endsWith()método determina se uma string termina com os caracteres de uma string especificada.
