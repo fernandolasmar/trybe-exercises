@@ -1,4 +1,3 @@
-// Encontre o livro com o maior nome.
 
 const assert = require('assert');
 
@@ -74,10 +73,20 @@ const expectedResult = {
   name: 'As Crônicas de Gelo e Fogo',
   releaseYear: 1991,
 };
+// Encontre o livro com o maior nome.
+
 
 function longestNamedBook() {
   // escreva seu código aqui
-  
+  return books.reduce((maior, atual) => {
+    if (atual.name.length > maior.name.length) {
+      return atual;
+    }
+    // console.log(atual);
+    // console.log(maior);
+    return maior;
+  });
 }
+console.log(longestNamedBook(books));
 
 assert.deepStrictEqual(longestNamedBook(), expectedResult);
