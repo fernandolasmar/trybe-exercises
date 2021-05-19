@@ -18,3 +18,4 @@ function myRemove(arr, item) {
 }
 
 // implemente seus testes aqui
+module.exports = myRemove;
