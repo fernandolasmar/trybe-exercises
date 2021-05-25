@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import CardList from './Card-list';
 
 const Task = (value) => {
   return (
@@ -12,7 +13,10 @@ const tarefas = ['Acordar', 'Tomar café', 'Escovar os dentes'];
 class App extends React.Component {
   render() {
     return (
-      <ul>{ tarefas.map(tarefa => Task(tarefa)) }</ul>
+      <div>
+        <ul>{ tarefas.map(tarefa => Task(tarefa)) }</ul>  
+        <CardList />           
+      </div>      
     );
   }  
 }
