@@ -6,6 +6,10 @@ Após ter criado e mensurado o custo da query, exclua o índice e mensure novame
 
 CREATE FULLTEXT INDEX index_name ON sakila.category(name);
 
-select * from sakila.category where MATCH(name) against('Sports');
+SELECT * FROM sakila.category WHERE MATCH(name) AGAINST('action');
+-- 0.35
 
 DROP INDEX index_name ON sakila.category;
+
+SELECT * FROM sakila.category WHERE name LIKE '%action%';
+-- 1.85
