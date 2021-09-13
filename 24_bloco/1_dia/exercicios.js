@@ -29,6 +29,11 @@ db.movies.update(
 );
 
 // Exercício 6 : Multiplique por 4 o imdbRating do filme Batman .
+db.movies.update(
+  { title: "Batman"},
+  { $mul: { imdbRating: 4 } }
+);
+
 // Exercício 7 : Renomeie o campo budget para estimatedBudget do filme Batman .
 // Exercício 8 : Utilize o operador $min para alterar o budget para 5 do filme Home Alone .
 // Exercício 9 : Utilize o operador $max para alterar o imdbRating para 8.6 do filme Godzilla . Além disso, altere a categoria "adventure" para "thriller" do filme Godzilla .
