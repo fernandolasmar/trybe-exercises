@@ -9,6 +9,13 @@ db.xmen.updateMany(
 );
 
 // Exercício 15 : Produza uma query que renomeie os campos de name para hero_name , e de true_name para full_name ; adicione o campo power com valor 100, em todos os documentos.
+db.xmen.updateMany(
+  {},
+  { 
+    $rename: { "name": "hero_name", "true_name": "full_name" },
+    $set: { power: 100 } 
+  } 
+);
 
 // Exercício 16 : Produza uma query onde os mutantes class omega ou gama passam a ter seu poder de 500 somente se seu poder for menor que 500 .
 
