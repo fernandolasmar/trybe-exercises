@@ -1,0 +1,149 @@
+// Utilizando o banco de dados storage , faça o seguinte exercício:
+// 01-Calcule qual o custo total de cada produto, considerando o preço de compra e os impostos.
+use("storage");
+// db.storage.find();
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      custo_total: { $add: ["$taxes", "$purchase_price"] }
+    }
+  }
+]);
+
+// 02-Calcule qual o lucro total de cada produto, considerando o preço de compra, os impostos e seu valor de venda.
+use("storage");
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      lucro_total: {
+        $subtract: [
+          "$sale_price",
+          { $add: ["$taxes", "$purchase_price"] }
+        ]
+      }
+    }
+  }
+]);
+
+// Retorne o menor número inteiro relativo ao preço de venda de cada produto;
+use("storage");
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      floored_price: { $floor: "$sale_price" }
+    }
+  }
+]);
+
+// Retorne o maior número inteiro relativo ao lucro total sobre cada produto. Nota: Desconsiderar taxas (taxes)
+use("storage");
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      ceiling_price: {
+        $ceil: {
+          $subtract: ["$sale_price", "$purchase_price"]
+        }
+      }
+    }
+  }
+]);
+
+// Calcule o valor absoluto do lucro total de cada produto.
+use("storage");
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      delta: {
+        $abs: {
+          $subtract: [
+            "$sale_price",
+            { $add: ["$taxes", "$purchase_price"] }
+          ]
+        }
+      }
+    }
+  }
+]);
+
+// Calcule qual o valor total em estoque de cada produto, considerando o preço de venda e a quantidade;
+use("storage");
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      valor_total: {
+        $multiply: ["$sale_price", "$quantity"]
+      }
+    }
+  }
+]);
+
+// Calcule qual será o lucro total de cada produto caso todo o estoque seja vendido.
+use("storage");
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      lucro_total: {
+        $multiply: [
+          {
+            $subtract: [
+              "$sale_price",
+              { $add: ["$taxes", "$purchase_price"] }
+            ]
+          },
+          "$quantity"
+        ]
+      }
+    }
+  }
+]);
+
+// Calcule qual será o preço de venda de cada produto caso haja uma promoção de 50% de desconto
+use("storage");
+db.products.aggregate([
+  {
+    $project: {
+      _id: 0,
+      name: 1,
+      new_price: {
+        $subtract: [
+          "$sale_price",
+          {
+            $multiply: [
+              {
+                $divide: [50, 100]
+              },
+              "$sale_price"
+            ]
+          }
+        ]
+      }
+    }
+  }
+]);
+
+// Calcule o valor total do estoque, considerando que cada produto valha o mesmo que seu preço de venda. Lembre-se da quantidade.
+use("storage");
+db.products.aggregate([
+  {
+    $addFields: {
+      stock_total_value: {
+        $multiply: ["$sale_price", "$quantity"]
+      }
+    }
+  }
+]);
