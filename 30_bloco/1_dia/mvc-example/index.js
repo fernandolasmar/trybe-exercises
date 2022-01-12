@@ -1,5 +1,5 @@
-const bodyParser = require('body-parser');
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const AuthorController = require('./controllers/authorController');
 
@@ -16,7 +16,7 @@ app.get('/authors/new', AuthorController.newAuthor);
 
 app.get('/authors/:id', AuthorController.showAuthor);
 
-app.get('/authors', AuthorController.createAuthor);
+app.post('/authors', AuthorController.createAuthor);
 
 const PORT = process.env.PORT || 3000;
 

@@ -20,7 +20,7 @@ const getNewAuthor = (author) => {
 // Transforma o nome dos campos de snake_case para camelCase
 const serialize = (author) => ({
   id: author.id,
-  fistName: author.fist_name,
+  fistName: author.first_name,
   middleName: author.middle_name,
   lastName: author.last_name
 });
@@ -59,7 +59,7 @@ const isValid = (firstName, middleName, lastName) => {
 };
 
 const create = async (firstName, middleName, lastName) => connection.execute(
-  'INSERT INTO mvc_example.authors (fist_name, middle_name, last_name) VALUES (?,?,?)', [firstName, middleName, lastName],
+  'INSERT INTO mvc_example_sd12.authors (first_name, middle_name, last_name) VALUES (?,?,?)', [firstName, middleName, lastName],
 )
 
 module.exports = {

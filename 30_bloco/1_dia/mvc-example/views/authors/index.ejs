@@ -9,7 +9,7 @@
 <body>
   <ul>
     <% authors.forEach((author) => { %>
-      <li><%= author.name %></li>
+      <li> <%= author.name %> </li>
       <a href=<%= `/authors/${author.id}` %>>Detalhes</a>
     <% }) %>
   </ul>
